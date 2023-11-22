@@ -1,0 +1,40 @@
+cabal-version:   3.0
+name:            ifpl
+version:         0.1.0.0
+license:         NONE
+author:          Unknown
+maintainer:      Unknown
+build-type:      Simple
+extra-doc-files: README.md
+
+common options
+    ghc-options: -Wall
+    default-language: GHC2021
+    default-extensions:
+        DuplicateRecordFields,
+        NoFieldSelectors,
+        OverloadedRecordDot,
+
+library
+    import:           options
+    hs-source-dirs:   src
+    exposed-modules:  IFPL
+    build-depends:
+        base ^>=4.19.0.0,
+
+executable ifpl
+    import:           options
+    hs-source-dirs:   app
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.19.0.0,
+        ifpl,
+
+test-suite ifpl-test
+    import:           options
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Main.hs
+    build-depends:
+        base ^>=4.19.0.0,
+        ifpl,
