@@ -1,4 +1,6 @@
-module IFPL (someFunc) where
+module IFPL (exec) where
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
+import DataDef ( Lambda(Lambda) )
+
+exec :: String -> String
+exec src = src

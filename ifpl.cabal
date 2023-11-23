@@ -18,7 +18,9 @@ common options
 library
     import:           options
     hs-source-dirs:   src
-    exposed-modules:  IFPL
+    exposed-modules:
+        IFPL,
+        DataDef,
     build-depends:
         base ^>=4.19.0.0,
 

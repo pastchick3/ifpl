@@ -1,8 +1,13 @@
 module Main where
 
-import qualified IFPL (someFunc)
+import System.Environment (getArgs)
+import Control.Monad (when)
+import IFPL (exec)
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  IFPL.someFunc
+  args <- getArgs
+  when (length args /= 1)
+    (error "Please provide only the path to the source code file")
+  src <- readFile $ args !! 0
+  print $ exec src
