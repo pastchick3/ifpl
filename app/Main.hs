@@ -10,4 +10,4 @@ main = do
   when (length args /= 1)
     (error "Please provide only the path to the source code file")
   src <- readFile $ args !! 0
-  print $ exec src
+  putStrLn $ exec src

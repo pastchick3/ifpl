@@ -20,7 +20,7 @@ library
     hs-source-dirs:   src
     exposed-modules:
         IFPL,
-        DataDef,
+        AST,
     build-depends:
         base ^>=4.19.0.0,
 
